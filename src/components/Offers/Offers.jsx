@@ -1,6 +1,6 @@
 import React from "react";
 import "./Offer.css"
-import Exclusive from "../../assets/Exclusive.webp"
+import Exclusive from "../../assets/exclusive.webp"
 const  Offers=() =>{
     return(
         <div className="offers">
