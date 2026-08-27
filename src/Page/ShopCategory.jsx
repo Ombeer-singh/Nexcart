@@ -1,0 +1,49 @@
+import React, { useContext } from 'react';
+import "../CSS/ShopCategory.css";
+import { ShopContext } from '../Context/ShopContext';
+import dropdownicon from "../assets/dropdownicon.webp"
+//
+import Item from '../components/Item/Item';
+
+const ShopCategory = (props) => {
+  const { all_product,search } = useContext(ShopContext);
+  const filteredProducts = all_product.filter(
+  (item) =>
+    item.category === props.category &&
+    item.name.toLowerCase().includes(search.toLowerCase()));
+  // console.log(all_product)
+  
+  return (
+    <div className='shop-category'>
+      <img className='shopcategory-banner' src={props.banner} alt="" height="300px" />
+      <div className='shopcategory-indexSort'>
+        <p>
+          <span>Showing 1-12</span> out of 36 product
+        </p>
+        <div className='shopcategory-sort'> 
+          Sort by <img src={dropdownicon} alt="" height="30px" />
+        </div>
+      </div>
+      <div className="shopcategory-products">
+        {all_product.map((item,i)=>{
+          if( props.category=== item.category){
+            return<Item key={i}
+            id={item.id}
+            name={item.name}
+            image={item.image}
+            new_price ={item.new_price}
+            old_price={item.old_price}
+
+            />
+          }else 
+            return null;
+        })}
+      </div>
+      <div className="shopcategory-loadmore">
+        Explore More
+      </div>
+    </div>
+  );
+};
+
+export default ShopCategory;

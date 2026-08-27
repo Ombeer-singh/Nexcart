@@ -1,0 +1,48 @@
+.item{
+    width:200px;
+    height: 320px;
+    
+    border: 1px solid black;
+    border-radius: 20px;
+    
+}
+.item p{
+    margin-top: 2px;
+    padding: 6px;
+    font-size: 15px;
+    font-weight: 800;
+
+}
+.item img{
+    height:250px;
+    width: 190px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background: white;
+
+}
+.item-prices{
+    display: flex;
+    gap: 20px;
+    font-size: 15px;
+    font-weight: 700;
+        padding: 0px;
+        margin-top: auto;
+}
+    
+.item-prices-new{
+    color: #373737;
+    font-size: 16px;
+    font-weight: 200;
+}
+.item-prices-old{
+    color: #8c8c8c;
+    font-size: 6px;
+    font-weight: 200;
+text-decoration: line-through;
+
+}
+.item:hover{
+    transform: scale(1.1);
+    transition:0.6s ;
+}
